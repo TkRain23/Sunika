@@ -1,8 +1,39 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px 'Montserrat', sans-serif;
+    background-color: #D8D8D8;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+
+#hero {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.hero-btn {
+    margin: 7.5px;
+}
+
+nav .brand-logo {
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* realligns logo on mobile navbar */
+@media only screen and (max-width: 992px){
+    nav .brand-logo {
+        margin-left: 0px;
+    }
+}
+
+nav {
+    background-color: #393E46;
 }
