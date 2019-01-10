@@ -17,6 +17,33 @@ a {
     transform: translate(-50%, -50%);
 }
 
+input:focus {
+  border-bottom: 1px solid #393e46 !important;
+  box-shadow: 0 1px 0 0 #393e46 !important;
+}
+
+label.active {
+  color: #929aab !important;
+}
+
+#center-form {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 30px 15px 30px 15px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.30);
+}
+
+#form-title {
+    text-align: center;
+    letter-spacing: 5px;
+}
+
 .hero-btn {
     margin: 7.5px;
 }
@@ -46,6 +73,11 @@ nav {
     background-color: #929AAB;
 }
 
+#submit-btn {
+    background-color: #393e46;
+    margin-left: 0.75rem;
+}
+
 .btn {
   overflow: hidden;
   border-radius: 6px;
@@ -73,4 +105,9 @@ nav {
     color: #929AAB;
     letter-spacing: 8px;
     font-weight: 600;
+}
+
+#form
+{
+    width: 35%;
 }
