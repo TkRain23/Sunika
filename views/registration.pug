@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    div.container#form
+        div.row#center-form
+            h5#form-title SIGN UP
+            form.col.s12
+                div.row
+                    div.input-field.col.s12
+                        input#first_name(type='text', class='validate')
+                        label(for='first_name') Username
+                    div.input-field.col.s12
+                        input#email(type='email', class='validate')
+                        label(for='email') Email
+                    div.input-field.col.s12
+                        input#password(type='password', class='validate')
+                        label(for='password') Password
+                    button.btn.waves-effect.waves-light#submit-btn(type='submit', name='action') Submit
+                        i.material-icons.right send
