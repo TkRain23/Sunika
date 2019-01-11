@@ -4,16 +4,19 @@ block content
     div.container#form
         div.row#center-form
             h5#form-title SIGN UP
-            form.col.s12
+            form.col.s12(action="/sign-up" method="post")
                 div.row
                     div.input-field.col.s12
-                        input#first_name(type='text', class='validate')
-                        label(for='first_name') Username
+                        label(for='username') Username
+                        input#username(name='username',type='text', class='validate')
+                        
                     div.input-field.col.s12
-                        input#email(type='email', class='validate')
                         label(for='email') Email
+                        input#email(name='email', type='email', class='validate')
+                        
                     div.input-field.col.s12
-                        input#password(type='password', class='validate')
                         label(for='password') Password
+                        input#password(name='password', type='password', class='validate')
+                        
                     button.btn.waves-effect.waves-light#submit-btn(type='submit', name='action') Submit
                         i.material-icons.right send
