@@ -20,4 +20,9 @@ module.exports = (app) => {
                 console.log(err.message);
             });
     });
+
+    app.get('/login', (req, res) => {
+        res.render('login');
+    })
+    
 };
