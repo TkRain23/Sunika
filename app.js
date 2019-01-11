@@ -5,11 +5,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
+var jwt = require('jsonwebtoken')
+
+require('dotenv').config()
 
 //router imports
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
+var collectionRouter = require('./routes/collections');
 
 var app = express();
 
@@ -31,6 +35,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 require('./routes/auth.js')(app);
+require('./routes/collections.js')(app);
 require('./data/sunika-db');
 
 
