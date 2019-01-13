@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 var jwt = require('jsonwebtoken')
 
+// initialize dotenv to load environment variables
 require('dotenv').config()
 
 //router imports
