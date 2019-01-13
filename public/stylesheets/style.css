@@ -134,3 +134,38 @@ nav {
 {
     width: 35%;
 }
+
+.cards-container {
+  column-break-inside: avoid;
+  .card {
+    display: inline-block;
+    overflow: visible;
+    height: 100vh;
+  }
+}
+
+.shoerack
+{
+    width: 100%;
+    height: 80%;
+}
+
+.shoerow
+{
+    overflow: auto;
+    height: 123%
+}
+
+.whitespace
+{
+    display: inline-block;
+    width: 100%;
+    max-width: 100%; /* add this */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* background-image: linear-gradient(90deg,#000000 0%,rgba(0,0,0,0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position:relative; */
+}
