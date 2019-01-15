@@ -8,6 +8,8 @@ const UserSchema = new Schema({
     password: { type: String, select: false },
     email: { type: String, unique: true, required: true },
     username: { type: String, unique: true, required: true},
+    firstName: { type: String },
+    lastName: { type: String },
     bio: { type: String },
     shoecollection: [{
         type: Schema.Types.ObjectId,

@@ -18,9 +18,9 @@ module.exports = (app) => {
         user
             .save()
             .then(user => {
-                var token = jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: '60 days' });
+                var token = jwt.sign({ _id: user._id, username: user.username, firstName: user.firstName, lastName: user.lastName }, process.env.SECRET, { expiresIn: '60 days' });
                 res.cookie('nToken', token, { maxAge: 900000 , httpOnly: true });
-                res.redirect('/collection');
+                res.redirect('/users/' + user.username);
             })
             .catch(err => {
                 console.log(err.message);
@@ -37,7 +37,7 @@ module.exports = (app) => {
         const username = req.body.username;
         const password = req.body.password;
         // find this username
-        User.findOne({ username }, 'username password')
+        User.findOne({ username }, 'firstName lastName username password')
             .then(user => {
                 if (!user) {
                     // user not found
@@ -50,13 +50,14 @@ module.exports = (app) => {
                         // password does not match
                         return res.status(401).send({ message: 'Wrong Username or Password' });
                     }
+                    console.log(user)
                     // create a token
-                    const token = jwt.sign({ _id: user._id, username: user.username }, process.env.SECRET, {
+                    const token = jwt.sign({ _id: user._id, username: user.username, firstName: user.firstName, lastName: user.lastName}, process.env.SECRET, {
                         expiresIn: '60 days'
                     });
                     // set a cookie and redirect to root
                     res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
-                    res.redirect('/');
+                    res.redirect('/users/' + user.username);
                 });
             })
             .catch(err => {
