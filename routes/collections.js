@@ -11,4 +11,12 @@ module.exports = (app) => {
             .catch((err) => console.error(err));
     });
 
+    app.get('/shoes', (req, res) => {
+        var currentUser = req.user;
+        Shoe
+            .find()
+            .then((shoes) => res.render('all-shoe', { shoes, currentUser }))
+            .catch((err) => console.error(err));
+    });
+
 };
