@@ -13,6 +13,7 @@ a {
 .card .card-image img
 {
     border-radius: 8px 8px 0px 0px;
+    /* padding: 0 15px 0 15px; */
 }
 .contain
 {
@@ -199,4 +200,41 @@ nav {
     flex-flow: column;
     justify-content: space-around;
     height: 100%;
+}
+
+.fnln
+{
+    text-transform: capitalize;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating)
+{
+    color: #393e46;
+}
+
+.shoename
+{
+    font-weight: 600;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.adidas
+{
+    position: absolute;
+    height: 90%;
+    left: -250px;
+    bottom: 0px;
+    filter: grayscale(60%) opacity(0.5)
+}
+.nike
+{
+    position: absolute;
+    height: 90%;
+    bottom: 0px;
+    right: -200px;
+    filter: grayscale(60%) opacity(0.5)
 }
