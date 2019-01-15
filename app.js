@@ -15,12 +15,14 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var collectionRouter = require('./routes/collections');
-
+const shoeRouter = require('./routes/shoe')
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -31,12 +33,29 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(expressValidator());
+var checkAuth = (req, res, next) => {
+    console.log("Checking authentication");
+    if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
+        req.user = null;
+    } else {
+        var token = req.cookies.nToken;
+        var decodedToken = jwt.decode(token, {
+            complete: true
+        }) || {};
+        req.user = decodedToken.payload;
+    }
 
+    next();
+};
+
+app.use(checkAuth);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/shoe', shoeRouter);
 
 require('./routes/auth.js')(app);
 require('./routes/collections.js')(app);
+require('./routes/')
 require('./data/sunika-db');
 
 
