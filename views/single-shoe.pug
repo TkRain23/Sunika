@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    div.container
+        div.row.singleshoerow
+            div.col.s12.m8
+                img.shoeimg(src=shoe.media.imageUrl)
+            div.col.s12.m4.shoe-info
+                div.text
+                    h3 #{shoe.brand}
+                    h4 #{shoe.title}
+                    h5 $#{shoe.retailPrice}
+                form.col.s12(action=`/users/add/${shoe._id}` method="post")
+                    button.btn.waves-effect.waves-light#submit-btn(type='submit', name='action') Add to Collection
+                        i.material-icons.right plus_one

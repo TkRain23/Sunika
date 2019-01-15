@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    div.container
+        div.row
+            div.container.shoerack
+                div.row.shoerow
+                    each shoe in shoes
+                        div.col.s12.m6.l3.cards-container
+                            div.card
+                                div.card-image
+                                    img(src=shoe.media.imageUrl)
+                                    span.card-title
+                                div.card-action
+                                    a.whitespace(href='/shoe/' + shoe.urlKey) #{shoe.title}
