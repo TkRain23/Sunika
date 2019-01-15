@@ -16,9 +16,9 @@ html
             ul#nav-mobile.right.hide-on-med-and-down
                 if currentUser
                     li
-                        a(href="/") Shoes
+                        a(href="/shoes") Shoes
                     li
-                        a(href='/collection') Profile
+                        a(href=`/users/${currentUser.username}`) Profile
                     li
                         a(href='/logout') Logout
                 else

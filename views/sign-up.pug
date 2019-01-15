@@ -6,6 +6,14 @@ block content
             h5#form-title SIGN UP
             form.col.s12(action="/sign-up" method="post")
                 div.row
+                    div.input-field.col.s6
+                        label(for='firstName') First Name
+                        input#username(name='firstName',type='text', class='validate')
+                            
+                    div.input-field.col.s6
+                        label(for='lastName') Last Name
+                        input#username(name='lastName',type='text', class='validate')
+                            
                     div.input-field.col.s12
                         label(for='username') Username
                         input#username(name='username',type='text', class='validate')
