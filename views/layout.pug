@@ -14,17 +14,17 @@ html
         div.nav-wrapper
             a.brand-logo(href='/') SUNIKA
             ul#nav-mobile.right.hide-on-med-and-down
-                li
-                    //- form
-                    //-     div.input-field
-                    //-         input#search(type='search', required='')
-                    //-         label.label-icon(for='search')
-                    //-             i.material-icons search
-                    //-         i.material-icons close
-                li
-                    a(href='/sign-up') Signup
-                li
-                    a(href='/login') Login
-                li
-                    a(href='/logout') Logout
+                if currentUser
+                    li
+                        a(href="/") Shoes
+                    li
+                        a(href='/collection') Profile
+                    li
+                        a(href='/logout') Logout
+                else
+                    li
+                        a(href='/sign-up') Signup
+                    li
+                        a(href='/login') Login
+                    
     block content
