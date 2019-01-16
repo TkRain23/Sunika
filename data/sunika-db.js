@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 assert = require("assert");
 
-const url = "mongodb://localhost/sunika-db";
+const url = process.env.MONGODB_URI;
 mongoose.Promise = global.Promise;
 mongoose.connect(
   url,
